@@ -1,0 +1,11 @@
+.token-header{
+    display: flex;
+    align-items: center;
+    height: 25px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    background-color: #fff;
+    border-bottom: solid 1px #ddd;
+    margin-top: 51px;
+}
