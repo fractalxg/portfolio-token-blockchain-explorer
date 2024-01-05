@@ -10,8 +10,11 @@ server.use(
   })
 );
 
-const blockchainRoute = require("./routes/Blockchain");
-server.use("/", blockchainRoute);
+const binanceRoute = require("./routes/Binance");
+server.use("/", binanceRoute);
+
+const ethereumRoute = require("./routes/Ethereum");
+server.use("/", ethereumRoute);
 
 server.listen(port, () => {
   console.log(`Server is running on port: ${port}`);

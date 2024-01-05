@@ -3,7 +3,7 @@ const axios = require("axios");
 const router = express.Router();
 const { bscscan_url, bscscan_url_image } = require("../config");
 
-router.get("/blockchain", async (req, res) => {
+router.get("/binance", async (req, res) => {
   const search = req.query.term;
 
   try {
