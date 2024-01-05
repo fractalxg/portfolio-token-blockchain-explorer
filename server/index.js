@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const server = express();
-const PORT = 3001;
+const { port } = require("./config")
 
 server.use(
   cors({
@@ -13,6 +13,6 @@ server.use(
 const blockchainRoute = require("./routes/Blockchain");
 server.use("/", blockchainRoute);
 
-server.listen(PORT, () => {
-  console.log(`Server is running on port: ${PORT}`);
+server.listen(port, () => {
+  console.log(`Server is running on port: ${port}`);
 });
