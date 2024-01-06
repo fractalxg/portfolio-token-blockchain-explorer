@@ -7,6 +7,9 @@ img {
     height: 100%;
     width: 100%;
     align-items: center;
+    justify-content: center;
     gap: 3px;
-    padding-left: 10px;
+    font-size: 12px;
+    font-weight: 400;
+    filter: grayscale(1);
 }
