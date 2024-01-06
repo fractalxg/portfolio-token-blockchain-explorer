@@ -1,11 +1,15 @@
-import "./Body.css"
+import SearchBar from "../SearchBar";
+import "./Body.css";
 
 const Body = () => {
-	return (
-		<div className="body">
-			<h1>Blockchain & Token Explorer</h1>
-		</div>
-		)
-	}
-	
-	export default Body
+  return (
+    <div className="body">
+      <div className="search-container">
+        <h1>Token & Blockchain Explorer</h1>
+        <SearchBar />
+      </div>
+    </div>
+  );
+};
+
+export default Body;

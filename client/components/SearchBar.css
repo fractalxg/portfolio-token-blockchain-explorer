@@ -1,0 +1,26 @@
+.container {
+    display: flex;
+    justify-content: center;
+}
+.search-bar-container {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  height: 50px;
+  width: 400px;
+}
+.search-icon{
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+input {
+  display: flex;
+  margin-left: 20px;
+  width: 330px;
+  font-size: 20px;
+  border: none;
+}
+input:focus {
+  outline: none;
+}
