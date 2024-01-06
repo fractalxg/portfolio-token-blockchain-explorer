@@ -1,0 +1,34 @@
+.search-box-container{
+    display: grid;
+}
+.selected{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 100px;
+    background-color: #fff;
+    border-right: solid 1px #ddd;
+    
+}
+.search-box-container p {
+    cursor: pointer;
+}
+.arrow-icon{
+    padding-top: 3px;
+    padding-left: 3px;
+}
+.selection p{
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 100px;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.selection p:hover{
+    color: #fff;
+    background-color: #505050;
+}
