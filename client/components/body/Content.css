@@ -1,0 +1,9 @@
+.content-container {
+    position: absolute;
+    top: 0;
+    margin-top: 200px;
+    z-index: 0;
+}
+.content-container p {
+    color: #fff;
+}

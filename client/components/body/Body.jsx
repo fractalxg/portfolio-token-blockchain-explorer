@@ -3,10 +3,14 @@ import { useState } from "react";
 import "./Body.css";
 import SearchComboBox from "../searcher/SearchComboBox";
 import SearchList from "../searcher/SearchList";
+import Content from "./COntent";
 
 const Body = () => {
   const [apiResponse, setApiResponse] = useState([]);
   const [selectedChain, setSelectedChain] = useState("Binance");
+  const [tokenData, setTokenData] = useState([]);
+  const [visibleList, setVisibleList] = useState(true);
+
 
   return (
     <div className="body">
@@ -18,11 +22,19 @@ const Body = () => {
             <SearchBar
               selectedChain={selectedChain}
               setApiResponse={setApiResponse}
+              setVisibleList={setVisibleList}
             />
-						{<SearchList apiResponse={apiResponse}/>}
+            {visibleList && (
+              <SearchList
+                apiResponse={apiResponse}
+                setTokenData={setTokenData}
+                setVisibleList={setVisibleList}
+              />
+            )}
           </div>
         </div>
       </div>
+      <Content tokenData={tokenData} />
     </div>
   );
 };

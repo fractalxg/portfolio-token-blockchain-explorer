@@ -2,8 +2,9 @@ import "./SearchBar.css";
 import { IoMdSearch } from "react-icons/io";
 import axios from "axios";
 
-const SearchBar = ({ selectedChain, setApiResponse }) => {
+import { useEffect } from "react";
 
+const SearchBar = ({ selectedChain, setApiResponse, setVisibleList }) => {
   const chainRouter = () => {
     if (selectedChain == "Binance") {
       const BINANCE_SERVER = import.meta.env.VITE_BINANCE_API_SERVER;
@@ -17,13 +18,14 @@ const SearchBar = ({ selectedChain, setApiResponse }) => {
 
   const getChainRouterResponse = async (value) => {
     const response = await axios.get(chainRouter() + value);
-    setApiResponse(response.data)
-    
-    console.log([response.data])
+    setApiResponse(response.data);
+
+    console.log([response.data]);
   };
 
   const handleChange = (value) => {
-    getChainRouterResponse(value)
+    getChainRouterResponse(value);
+    setVisibleList(true);
   };
 
   return (
@@ -31,7 +33,7 @@ const SearchBar = ({ selectedChain, setApiResponse }) => {
       <div className="search-bar-container">
         <input
           type="text"
-          placeholder="Search something..." 
+          placeholder="Search something"
           onChange={(e) => handleChange(e.target.value)}
         ></input>
         <IoMdSearch className="search-icon" />

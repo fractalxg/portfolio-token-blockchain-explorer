@@ -14,6 +14,8 @@ const TokenHeaderContent = ({ url, tokenSearch, tokenDigit }) => {
     getToken();
   }, []);
 
+  
+
   return (
     <div>
       {token &&
@@ -21,7 +23,7 @@ const TokenHeaderContent = ({ url, tokenSearch, tokenDigit }) => {
           <div className="content" key={i}>
             <img src={data[0].image} />
             <span>{tokenDigit}</span>
-            <span>{data[0].rate}</span>
+            <span id="currency">{(data[0].rate)}</span>
           </div>
         ))}
     </div>

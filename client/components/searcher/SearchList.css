@@ -4,6 +4,7 @@
   max-height: 500px;
   background-color: #fff;
   overflow-y: scroll;
+  z-index: 1;
 }
 .list-container {
   display: flex;
