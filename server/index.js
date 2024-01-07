@@ -16,6 +16,10 @@ server.use("/", binanceRoute);
 const ethereumRoute = require("./routes/Ethereum");
 server.use("/", ethereumRoute);
 
+const priceRoute = require("./routes/PriceUSD")
+server.use("/", priceRoute)
+
+
 server.listen(port, () => {
   console.log(`Server is running on port: ${port}`);
 });

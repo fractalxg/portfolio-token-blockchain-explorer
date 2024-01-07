@@ -7,4 +7,5 @@ module.exports = {
   bscscan_url_image: process.env.BSCSCAN_URL_IMAGE,
   etherscan_url: process.env.ETHERSCAN_URL,
   etherscan_url_image: process.env.ETHERSCAN_URL_IMAGE,
+  price_url: process.env.PRICE_URL,
 };
