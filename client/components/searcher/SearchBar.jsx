@@ -1,10 +1,8 @@
 import "./SearchBar.css";
 import { IoMdSearch } from "react-icons/io";
-import { useState } from "react";
 import axios from "axios";
 
 const SearchBar = ({ selectedChain, setApiResponse }) => {
-  const [input, setInput] = useState("");
 
   const chainRouter = () => {
     if (selectedChain == "Binance") {
@@ -19,7 +17,8 @@ const SearchBar = ({ selectedChain, setApiResponse }) => {
 
   const getChainRouterResponse = async (value) => {
     const response = await axios.get(chainRouter() + value);
-    setInput([response.data]);
+    setApiResponse(response.data)
+    
     console.log([response.data])
   };
 

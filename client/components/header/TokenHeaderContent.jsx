@@ -6,7 +6,7 @@ const TokenHeaderContent = ({ url, tokenSearch, tokenDigit }) => {
   const [token, setToken] = useState();
 
   const getToken = async () => {
-    const response = await axios.get(url+tokenSearch);
+    const response = await axios.get(url + tokenSearch);
     setToken([response.data]);
   };
 
@@ -18,12 +18,10 @@ const TokenHeaderContent = ({ url, tokenSearch, tokenDigit }) => {
     <div>
       {token &&
         token.map((data, i) => (
-          <div key={i}>
-            <div className="content">
-              <img src={data[0].image} />
-              <span>{tokenDigit}</span>
-              <span>{data[0].rate}</span>
-            </div>
+          <div className="content" key={i}>
+            <img src={data[0].image} />
+            <span>{tokenDigit}</span>
+            <span>{data[0].rate}</span>
           </div>
         ))}
     </div>

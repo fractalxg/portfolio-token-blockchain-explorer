@@ -18,6 +18,10 @@
     padding-top: 3px;
     padding-left: 3px;
 }
+.selection{
+    position: absolute;
+    margin-top: 50px;
+}
 .selection p{
     display: grid;
     align-items: center;

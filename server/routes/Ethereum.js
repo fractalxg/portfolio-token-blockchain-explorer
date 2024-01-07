@@ -31,14 +31,16 @@ router.get("/ethereum", async (req, res) => {
     });
 
     res.send(
-      responseData.map((data) => {
-        return {
-          title: data.title,
-          rate: data.rate,
-          address: data.address,
-          image: `${etherscan_url_image}${data.img}`,
-        };
-      })
+      responseData
+        .filter((data) => data.img)
+        .map((data) => {
+          return {
+            title: data.title,
+            rate: data.rate,
+            address: data.address,
+            image: `${etherscan_url_image}${data.img}`,
+          };
+        })
     );
   } catch (error) {
     console.error("Error fetching data from blockchain:", error);

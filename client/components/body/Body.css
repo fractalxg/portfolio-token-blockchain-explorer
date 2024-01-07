@@ -15,3 +15,6 @@
 .search-wrapper{
     display: flex;
 }
+.search-box-list{
+    display: grid;
+}
