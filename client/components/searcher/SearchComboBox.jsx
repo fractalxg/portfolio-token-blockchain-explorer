@@ -17,8 +17,7 @@ const SearchComboBox = ({ setSelectedChain }) => {
   };
 
   const selectedChainLabel = () => {
-    if (chainSelection == "Binance") return "Ethereum";
-    if (chainSelection == "Ethereum") return "Binance";
+    return chainSelection === "Binance" ? "Ethereum" : "Binance";
   };
 
   return (
@@ -28,7 +27,9 @@ const SearchComboBox = ({ setSelectedChain }) => {
       </p>
       {visible && (
         <div className="selection">
-          <p onClick={() => selectedChain(selectedChainLabel)}>{selectedChainLabel()}</p>
+          <p onClick={() => selectedChain(selectedChainLabel)}>
+            {selectedChainLabel()}
+          </p>
         </div>
       )}
     </div>
