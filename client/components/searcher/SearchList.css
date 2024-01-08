@@ -5,6 +5,7 @@
   background-color: #fff;
   overflow-y: scroll;
   z-index: 1;
+  visibility: hidden;
 }
 .list-container {
   display: flex;

@@ -1,9 +1,10 @@
 .content-container {
     position: absolute;
     top: 0;
-    margin-top: 280px;
+    margin-top: 300px;
     z-index: 0;
     width: 100%;
+    visibility: hidden;
 }
 .content-container p {
     color: #fff;  

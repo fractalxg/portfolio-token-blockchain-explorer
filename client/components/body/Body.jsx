@@ -8,7 +8,6 @@ import Content from "./COntent";
 const Body = () => {
   const [apiResponse, setApiResponse] = useState([]);
   const [tokenData, setTokenData] = useState([]);
-  const [visibleList, setVisibleList] = useState(true);
   const [selectedChain, setSelectedChain] = useState("Binance");
 
   return (
@@ -16,22 +15,13 @@ const Body = () => {
       <div className="search-container">
         <h1>Token & Blockchain Explorer</h1>
         <div className="search-wrapper">
-          <SearchComboBox 
-              setSelectedChain={setSelectedChain}
-          />
+          <SearchComboBox setSelectedChain={setSelectedChain} />
           <div className="search-box-list">
             <SearchBar
               selectedChain={selectedChain}
               setApiResponse={setApiResponse}
-              setVisibleList={setVisibleList}
             />
-            {visibleList && (
-              <SearchList
-                apiResponse={apiResponse}
-                setTokenData={setTokenData}
-                setVisibleList={setVisibleList}
-              />
-            )}
+            <SearchList apiResponse={apiResponse} setTokenData={setTokenData} />
           </div>
         </div>
       </div>

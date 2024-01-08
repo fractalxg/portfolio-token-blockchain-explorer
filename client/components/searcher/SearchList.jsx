@@ -1,14 +1,20 @@
 import "./SearchList.css";
-import { useState } from "react";
+import {
+  showContent,
+  searchListShowHide,
+  clearSearchInput,
+} from "../ComponentsVisibility";
 
-const SearchList = ({ apiResponse, setTokenData, setVisibleList }) => {
+const SearchList = ({ apiResponse, setTokenData }) => {
   const tokenData = (value) => {
+    showContent();
     setTokenData(value);
-    setVisibleList(false);
+    searchListShowHide("hidden");
+    clearSearchInput();
   };
 
   return (
-    <div className="search-list-container">
+    <div id="search-list" className="search-list-container">
       {apiResponse &&
         apiResponse.map((data, i) => (
           <div

@@ -2,7 +2,7 @@ import "./Content.css";
 
 const Content = ({ tokenData }) => {
   return (
-    <div className="content-container">
+    <div id="content" className="content-container">
       <div className="token-data-container">
         <div className="data-container">
           <h1>Token Title</h1>

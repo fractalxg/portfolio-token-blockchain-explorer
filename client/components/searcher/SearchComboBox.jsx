@@ -1,8 +1,13 @@
 import "./SearchComboBox.css";
 import { useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
+import {
+  handleClearInput,
+  hideContent,
+  focusSearchInput,
+} from "../ComponentsVisibility";
 
-const SearchComboBox = ({setSelectedChain}) => {
+const SearchComboBox = ({ setSelectedChain }) => {
   const [chainSelection, setChainSelection] = useState("Binance");
   const [visible, setVisible] = useState(false);
 
@@ -10,8 +15,9 @@ const SearchComboBox = ({setSelectedChain}) => {
     setChainSelection(chain);
     setVisible(!visible);
     handleClearInput();
-    setSelectedChain(chain)
-
+    setSelectedChain(chain);
+    hideContent();
+    focusSearchInput();
   };
 
   const selectionDropDown = () => {
@@ -20,20 +26,6 @@ const SearchComboBox = ({setSelectedChain}) => {
 
   const selectedChainLabel = () => {
     return chainSelection === "Binance" ? "Ethereum" : "Binance";
-  };
-
-  const handleClearInput = () => {
-    const inputElement = document.getElementById("search"); 
-    if (inputElement) {
-      inputElement.value = "";
-    }
-  };
-
-  const clearContent = () => {
-    const contents = document.querySelectorAll("#content");
-    contents.forEach((data) => {
-      data.innerHTML = "";
-    });
   };
 
   return (
