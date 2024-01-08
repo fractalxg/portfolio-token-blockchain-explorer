@@ -38,7 +38,7 @@ router.get("/binance", async (req, res) => {
             title: data.title,
             rate: data.rate,
             address: data.address,
-            image: `${bscscan_url_image}${data.img}`,
+            image: `${bscscan_url_image}${data.img}`
           };
         })
     );

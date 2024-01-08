@@ -1,12 +1,26 @@
-import "./Content.css"
+import "./Content.css";
 
-const Content = ({tokenData}) => {
+const Content = ({ tokenData }) => {
   return (
     <div className="content-container">
-      <p>{tokenData.address}</p>  
-      <p id="currency"> {tokenData.rate}</p> 
-    </div>
-  )
-}
+      <div className="token-data-container">
+        <div className="data-container">
+          <h1>Token Title</h1>
+          <p>{tokenData.title}</p>
+        </div>
 
-export default Content
+        <div className="data-container">
+          <h1>Price</h1>
+          <p> {tokenData.rate}</p>
+        </div>
+
+        <div className="data-container">
+          <h1>Address</h1>
+          <p> {tokenData.address}</p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Content;

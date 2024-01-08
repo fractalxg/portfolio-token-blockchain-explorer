@@ -21,6 +21,7 @@
 .selection{
     position: absolute;
     margin-top: 50px;
+    z-index: 1;
 }
 .selection p{
     display: grid;

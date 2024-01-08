@@ -38,7 +38,7 @@ router.get("/ethereum", async (req, res) => {
             title: data.title,
             rate: data.rate,
             address: data.address,
-            image: `${etherscan_url_image}${data.img}`,
+            image: `${etherscan_url_image}${data.img}`
           };
         })
     );
