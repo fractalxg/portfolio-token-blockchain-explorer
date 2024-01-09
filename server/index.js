@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const server = express();
-const { port } = require("./config")
+const { port } = require("./config");
 
 server.use(
   cors({
@@ -16,9 +16,11 @@ server.use("/", binanceRoute);
 const ethereumRoute = require("./routes/Ethereum");
 server.use("/", ethereumRoute);
 
-const priceRoute = require("./routes/PriceUSD")
-server.use("/", priceRoute)
+const priceRoute = require("./routes/PriceUSD");
+server.use("/", priceRoute);
 
+const binanceCode = require("./routes/BinanceSourceCode");
+server.use("/", binanceCode);
 
 server.listen(port, () => {
   console.log(`Server is running on port: ${port}`);
