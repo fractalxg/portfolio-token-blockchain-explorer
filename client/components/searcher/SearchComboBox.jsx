@@ -3,11 +3,10 @@ import { useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 import {
   handleClearInput,
-  hideContent,
   focusSearchInput,
 } from "../ComponentsVisibility";
 
-const SearchComboBox = ({ setSelectedChain, setVisible }) => {
+const SearchComboBox = ({ setSelectedChain, setVisible, setListVisible }) => {
   const [chainSelection, setChainSelection] = useState("Binance");
   const [visibleSelection, setVisibleSelection] = useState(false);
 
@@ -16,8 +15,8 @@ const SearchComboBox = ({ setSelectedChain, setVisible }) => {
     setVisibleSelection(!visibleSelection);
     handleClearInput();
     setSelectedChain(chain);
-    //hideContent();
     setVisible(false)
+    setListVisible(false)
     focusSearchInput();
   };
 

@@ -3,10 +3,9 @@ import { IoMdSearch } from "react-icons/io";
 import axios from "axios";
 import {
   clearContentInputEmpty,
-  searchListShowHide,
 } from "../ComponentsVisibility";
 
-const SearchBar = ({ selectedChain, setApiResponse }) => {
+const SearchBar = ({ selectedChain, setApiResponse, setListVisible }) => {
   const chainRouter = () => {
     if (selectedChain == "Binance") {
       const BINANCE_SERVER = import.meta.env.VITE_BINANCE_API_SERVER;
@@ -28,7 +27,7 @@ const SearchBar = ({ selectedChain, setApiResponse }) => {
   const handleChange = (value) => {
     getChainRouterResponse(value);
     clearContentInputEmpty();
-    searchListShowHide("visible");
+    setListVisible(true)
   };
 
   return (

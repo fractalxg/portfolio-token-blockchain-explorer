@@ -7,7 +7,7 @@
     align-items: center;
     justify-content: center;
     height: 50px;
-    width: 100px;
+    width: 106px;
     background-color: #fff;
     border-right: solid 1px #ddd;
     
@@ -29,7 +29,7 @@
     align-items: center;
     justify-content: center;
     height: 50px;
-    width: 100px;
+    width: 106px;
     background-color: #fff;
     cursor: pointer;
 }
@@ -37,4 +37,25 @@
 .selection p:hover{
     color: #fff;
     background-color: #505050;
+}
+
+@media screen and (max-width: 500px) {
+    .search-box-container{
+        display: grid;
+        margin-top: 30px;
+        justify-content: center;
+    }
+    .selection{
+        position: absolute;
+        margin-top: 50px;
+        top: 20.2%;
+        left: 50%;
+        transform: translate(-50%)
+    }
+    .selection p{
+        width: 106px;
+    }
+    .selected{
+        border-right:none;
+    }
 }

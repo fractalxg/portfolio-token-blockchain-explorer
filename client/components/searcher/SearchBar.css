@@ -24,3 +24,9 @@ input {
 input:focus {
   outline: none;
 }
+
+@media screen and (max-width: 500px) {
+  .search-bar-container{
+    margin-top: 40px;
+  }
+}

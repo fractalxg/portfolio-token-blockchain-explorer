@@ -2,21 +2,6 @@ const clearContentInputEmpty = () => {
   const inputElement = document.getElementById("search");
   if (inputElement.value == "") {
     hideContent();
-    searchListShowHide("hidden")
-  }
-};
-
-const hideContent = () => {
-  const content = document.getElementById("content");
-  if (content) {
-    content.style.visibility = "hidden";
-  }
-};
-
-const searchListShowHide = (visibility) => {
-  const searchList = document.getElementById("search-list");
-  if (searchList) {
-    searchList.style.visibility = visibility;
   }
 };
 
@@ -32,13 +17,6 @@ const focusSearchInput = () => {
   searchInput.focus();
 };
 
-const showContent = () => {
-  const content = document.getElementById("content");
-  if (content) {
-    content.style.visibility = "visible";
-  }
-};
-
 const clearSearchInput = () => {
   const searchInput = document.getElementById("search");
   searchInput.value = "";
@@ -47,10 +25,7 @@ const clearSearchInput = () => {
 
 export {
   clearSearchInput,
-  hideContent,
-  showContent,
   focusSearchInput,
   handleClearInput,
-  searchListShowHide,
   clearContentInputEmpty,
 };

@@ -1,16 +1,18 @@
 import "./SearchList.css";
 import {
-  showContent,
-  searchListShowHide,
   clearSearchInput,
 } from "../ComponentsVisibility";
 
-const SearchList = ({ apiResponse, setTokenData, setVisible }) => {
+const SearchList = ({
+  apiResponse,
+  setTokenData,
+  setVisible,
+  setListVisible,
+}) => {
   const tokenData = (value) => {
-    //showContent();
-    setVisible(true)
+    setVisible(true);
     setTokenData(value);
-    searchListShowHide("hidden");
+    setListVisible(false)
     clearSearchInput();
   };
 

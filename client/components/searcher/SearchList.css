@@ -5,7 +5,7 @@
   background-color: #fff;
   overflow-y: scroll;
   z-index: 1;
-  visibility: hidden;
+
 }
 .list-container {
   display: flex;
@@ -40,4 +40,10 @@
 ::-webkit-scrollbar-thumb {
   background: #363538;
   border-radius: 10px;
+}
+
+@media screen and (max-width: 500px) {
+.search-list-container{
+  margin-left: 26px;
+}
 }
