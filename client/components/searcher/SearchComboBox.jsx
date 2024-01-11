@@ -7,21 +7,22 @@ import {
   focusSearchInput,
 } from "../ComponentsVisibility";
 
-const SearchComboBox = ({ setSelectedChain }) => {
+const SearchComboBox = ({ setSelectedChain, setVisible }) => {
   const [chainSelection, setChainSelection] = useState("Binance");
-  const [visible, setVisible] = useState(false);
+  const [visibleSelection, setVisibleSelection] = useState(false);
 
   const selectedChain = (chain) => {
     setChainSelection(chain);
-    setVisible(!visible);
+    setVisibleSelection(!visibleSelection);
     handleClearInput();
     setSelectedChain(chain);
-    hideContent();
+    //hideContent();
+    setVisible(false)
     focusSearchInput();
   };
 
   const selectionDropDown = () => {
-    setVisible(!visible);
+    setVisibleSelection(!visibleSelection);
   };
 
   const selectedChainLabel = () => {
@@ -33,7 +34,7 @@ const SearchComboBox = ({ setSelectedChain }) => {
       <p onClick={() => selectionDropDown()} className="selected">
         {chainSelection} <IoIosArrowDown className="arrow-icon" />
       </p>
-      {visible && (
+      {visibleSelection && (
         <div className="selection">
           <p onClick={() => selectedChain(selectedChainLabel)}>
             {selectedChainLabel()}

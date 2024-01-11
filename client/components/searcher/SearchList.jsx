@@ -5,9 +5,10 @@ import {
   clearSearchInput,
 } from "../ComponentsVisibility";
 
-const SearchList = ({ apiResponse, setTokenData }) => {
+const SearchList = ({ apiResponse, setTokenData, setVisible }) => {
   const tokenData = (value) => {
-    showContent();
+    //showContent();
+    setVisible(true)
     setTokenData(value);
     searchListShowHide("hidden");
     clearSearchInput();
