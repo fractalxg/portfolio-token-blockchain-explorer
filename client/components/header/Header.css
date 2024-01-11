@@ -6,4 +6,6 @@
     position: fixed;
     top: 0;
     border-bottom: solid 1px #ddd;
+    z-index: 1;
+    justify-content: end;
 }

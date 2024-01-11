@@ -1,0 +1,77 @@
+.switch {
+    display: flex;
+    align-items: center;
+    padding-right: 20px;
+}
+.switch_label {
+    width: 65px;
+    height: 31px;
+    position: relative;
+    display: block;
+    background: #242424;
+    border-radius: 200px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.switch_label:after {
+    content: "";
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    background: linear-gradient(180deg, #ffffff, #cfcfcf);
+    border-radius: 180px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+}
+.switch_input {
+    width: 0;
+    height: 0;
+    visibility: hidden;
+}
+.switch_input:checked + .switch_label {
+    background: #242424;
+}
+.switch_input:checked + .switch_label:after {
+    left: 62px;
+    transform: translateX(-100%);
+    background: linear-gradient(180deg, #777, #3a3a3a);
+}
+.switch_label:active:after {
+    width: 30px;
+}
+
+.switch_label .icons {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 7px;
+    z-index: 100;
+}
+.switch_label .sun {
+    padding-left: 7px;
+    color: #000;
+    transition: 0.3s;
+}
+.switch_label .moon {
+    padding-left: 20px;
+    color: #242424;
+    transition: 0.3s;
+}
+.switch_input:checked + .switch_label .sun {
+    color: #242424;
+}
+.switch_input:checked + .switch_label .moon {
+    color: #fff;
+}
+
+@media screen and (max-width: 800px) {
+    .switch {
+        display: flex;
+        justify-content: center;
+        padding: 0px;
+    }
+}
+
+

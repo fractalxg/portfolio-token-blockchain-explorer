@@ -1,0 +1,49 @@
+.options-container {
+  margin-top: 15px;
+  margin-right: 15px;
+}
+.options-title {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    width: 100%;
+    justify-content: center;
+}
+
+.options-selector {
+    background-color: #fff;
+    display: grid;
+    justify-content: center;
+    border: solid 1px #ddd;
+    margin-top: 5px;
+    width: 120px;
+
+}
+.options-selector p {
+    display: flex;
+    width: 120px;
+    justify-content: center;
+    padding-top:10px;
+    padding-bottom:10px;
+    cursor: pointer;
+}
+.options-selector p:hover{
+    color: #fff;
+    background-color: #363538;
+}
+.switch-container{
+    display: flex;
+    justify-content: center;
+    background-color: #ddd;
+    padding-top:8px;
+    padding-bottom:8px;
+}
+.language-container p{
+    display: flex;
+    justify-content: center;
+    background-color: #ddd;
+    padding-top:8px;
+    padding-bottom:8px;
+}
+
+
