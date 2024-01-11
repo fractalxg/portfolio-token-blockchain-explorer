@@ -1,6 +1,9 @@
 .search-box-container{
     display: grid;
+    position: absolute;
     margin-top: 30px;
+    border: solid 1px #ddd;
+
 }
 .selected{
     display: flex;
@@ -23,6 +26,9 @@
     position: absolute;
     margin-top: 50px;
     z-index: 1;
+    left: 49.8%;
+    transform: translate(-50%);
+    
 }
 .selection p{
     display: grid;
@@ -32,6 +38,7 @@
     width: 106px;
     background-color: #fff;
     cursor: pointer;
+    border: solid 1px #ddd;
 }
 
 .selection p:hover{
@@ -41,14 +48,12 @@
 
 @media screen and (max-width: 500px) {
     .search-box-container{
-        display: grid;
-        margin-top: 30px;
-        justify-content: center;
+        display: flex;
+        left: 50%;
+        transform: translate(-50%)
+
     }
     .selection{
-        position: absolute;
-        margin-top: 50px;
-        top: 20.2%;
         left: 50%;
         transform: translate(-50%)
     }

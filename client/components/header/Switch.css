@@ -66,12 +66,5 @@
     color: #fff;
 }
 
-@media screen and (max-width: 800px) {
-    .switch {
-        display: flex;
-        justify-content: center;
-        padding: 0px;
-    }
-}
 
 

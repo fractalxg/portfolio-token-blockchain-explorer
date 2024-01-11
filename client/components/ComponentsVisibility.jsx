@@ -1,7 +1,6 @@
 const clearContentInputEmpty = () => {
   const inputElement = document.getElementById("search");
   if (inputElement.value == "") {
-    hideContent();
   }
 };
 

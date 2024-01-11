@@ -8,6 +8,10 @@
   background-color: #fff;
   height: 50px;
   width: 360px;
+  border-top: solid 1px #ddd;
+  border-right: solid 1px #ddd;
+  border-bottom: solid 1px #ddd;
+  margin-left: 108px;
 }
 
 .search-icon{
@@ -27,6 +31,9 @@ input:focus {
 
 @media screen and (max-width: 500px) {
   .search-bar-container{
-    margin-top: 40px;
+    margin-left: 0px;
+    margin-top: 140px;
+    border: solid 1px #ddd;
   }
+
 }

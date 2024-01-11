@@ -5,6 +5,9 @@
   background-color: #fff;
   overflow-y: scroll;
   z-index: 1;
+  margin-left: 108px;
+  border-left: solid 1px #ddd;
+
 
 }
 .list-container {

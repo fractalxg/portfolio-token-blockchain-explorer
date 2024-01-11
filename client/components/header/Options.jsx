@@ -6,6 +6,7 @@ import Switch from "./Switch";
 const Options = () => {
   const [visibleTheme, setVisibleTheme] = useState(false);
   const [visibleLanguage, setVisibleLanguage] = useState(false);
+	const [visibleSelector, setVisibleSelector] = useState(false)
 
   const languageVisibility = () => {
     setVisibleLanguage(!visibleLanguage);
@@ -14,13 +15,16 @@ const Options = () => {
   const themeVisibility = () => {
     setVisibleTheme(!visibleTheme);
   };
+	const selectorVisibility = () => {
+    setVisibleSelector(!visibleSelector);
+  };
   return (
     <div className="options-container">
-      <p className="options-title">
+      <p onClick={selectorVisibility} className="options-title">
         Options
         <IoIosArrowDown className="arrow-icon" />
       </p>
-      <div className="options-selector">
+      {visibleSelector && <div className="options-selector">
         <p className="theme-title" onClick={themeVisibility}>Theme</p>
         {visibleTheme && (
           <div className="theme-container">
@@ -34,7 +38,7 @@ const Options = () => {
 						<p className="en-container">English</p>
           </div>
         )}
-      </div>
+      </div>}
     </div>
   );
 };

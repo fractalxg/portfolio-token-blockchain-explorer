@@ -4,6 +4,7 @@
     margin-top: 300px;
     z-index: 0;
     width: 100%;
+    
 
 }
 .content-container p {
@@ -13,6 +14,7 @@
     display: grid;
     border: solid 1px #272727;
     margin: 0px 50px 0px 50px;
+    
 }
 
 .data-container{
@@ -25,15 +27,17 @@
 .data-container h1 {
     padding-top: 30px;
     border-top:solid 1px #272727;
+    color: var(--font-color);
 }
 .data-container p {
     border-bottom:solid 1px #272727;
     padding-bottom: 30px;
+    color: var(--font-color);
 }
 
 @media screen and (max-width: 500px) {
     .content-container {
-        margin-top: 400px;
+        margin-top: 450px;
     }
     .data-container h1 {
         padding-top: 0px;

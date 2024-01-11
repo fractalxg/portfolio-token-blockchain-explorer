@@ -1,20 +1,28 @@
 import { IoMoonOutline } from "react-icons/io5";
 import { GoSun } from "react-icons/go";
+import { useState } from "react";
 
 import "./Switch.css";
 
 const Switch = () => {
+  const [switchChecked, setSwitchChecked] = useState(true);
+
   const setDarkMode = () => {
     document.querySelector("body").setAttribute("data-theme", "dark");
+    setSwitchChecked(!switchChecked);
   };
 
   const setLightMode = () => {
     document.querySelector("body").setAttribute("data-theme", "light");
+    setSwitchChecked(!switchChecked);
   };
 
-  const toggleTheme = (e) => {
-    if (e.target.checked) setDarkMode();
-    else setLightMode();
+  const toggleTheme = () => {
+    if (switchChecked) {
+      setDarkMode();
+    } else {
+      setLightMode();
+    }
   };
 
   return (
@@ -23,6 +31,7 @@ const Switch = () => {
         className="switch_input"
         type="checkbox"
         id="toggle"
+        checked={!switchChecked}
         onChange={toggleTheme}
       />
 

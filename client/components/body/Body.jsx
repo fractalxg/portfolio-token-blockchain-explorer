@@ -17,6 +17,7 @@ const Body = () => {
       <div className="search-container">
         <h1>Token & Blockchain Explorer</h1>
         <div className="search-wrapper">
+  
           <SearchComboBox
             setSelectedChain={setSelectedChain}
             setVisible={setVisible}
