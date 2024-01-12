@@ -1,9 +1,7 @@
 import "./SearchBar.css";
 import { IoMdSearch } from "react-icons/io";
 import axios from "axios";
-import {
-  clearContentInputEmpty,
-} from "../ComponentsVisibility";
+import { clearContentInputEmpty } from "../ComponentsVisibility";
 
 const SearchBar = ({ selectedChain, setApiResponse, setListVisible }) => {
   const chainRouter = () => {
@@ -27,7 +25,7 @@ const SearchBar = ({ selectedChain, setApiResponse, setListVisible }) => {
   const handleChange = (value) => {
     getChainRouterResponse(value);
     clearContentInputEmpty();
-    setListVisible(true)
+    setListVisible(true);
   };
 
   return (

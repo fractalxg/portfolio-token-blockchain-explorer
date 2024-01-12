@@ -10,11 +10,13 @@ const Switch = () => {
   const setDarkMode = () => {
     document.querySelector("body").setAttribute("data-theme", "dark");
     setSwitchChecked(!switchChecked);
+	console.log(switchChecked)
   };
 
   const setLightMode = () => {
     document.querySelector("body").setAttribute("data-theme", "light");
     setSwitchChecked(!switchChecked);
+	console.log(switchChecked)
   };
 
   const toggleTheme = () => {
@@ -26,7 +28,7 @@ const Switch = () => {
   };
 
   return (
-    <div className="switch">
+    <div className={`switch${switchChecked ? '' : '-hidden'}`}>
       <input
         className="switch_input"
         type="checkbox"

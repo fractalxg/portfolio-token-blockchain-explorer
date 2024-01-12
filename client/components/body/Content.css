@@ -12,7 +12,7 @@
 }
 .token-data-container{
     display: grid;
-    border: solid 1px #272727;
+    border: solid 1px #ddd;
     margin: 0px 50px 0px 50px;
     
 }
@@ -26,11 +26,11 @@
 
 .data-container h1 {
     padding-top: 30px;
-    border-top:solid 1px #272727;
+    border-top:solid 1px #ddd;
     color: var(--font-color);
 }
 .data-container p {
-    border-bottom:solid 1px #272727;
+    border-bottom:solid 1px #ddd;
     padding-bottom: 30px;
     color: var(--font-color);
 }

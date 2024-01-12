@@ -6,7 +6,8 @@ import Switch from "./Switch";
 const Options = () => {
   const [visibleTheme, setVisibleTheme] = useState(false);
   const [visibleLanguage, setVisibleLanguage] = useState(false);
-	const [visibleSelector, setVisibleSelector] = useState(false)
+	const [visibleSelector, setVisibleSelector] = useState(false);
+
 
   const languageVisibility = () => {
     setVisibleLanguage(!visibleLanguage);
@@ -28,7 +29,7 @@ const Options = () => {
         <p className="theme-title" onClick={themeVisibility}>Theme</p>
         {visibleTheme && (
           <div className="theme-container">
-            <div className="switch-container"><Switch /></div>
+            <div className="switch-container"><Switch/></div>
           </div>
         )}
         <p className="language-title" onClick={languageVisibility}>Language</p>
