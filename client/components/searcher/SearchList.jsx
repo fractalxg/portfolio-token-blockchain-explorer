@@ -1,7 +1,7 @@
 import "./SearchList.css";
 import {
   clearSearchInput,
-} from "../ComponentsVisibility";
+} from "../utils/ComponentsVisibility";
 
 const SearchList = ({
   apiResponse,

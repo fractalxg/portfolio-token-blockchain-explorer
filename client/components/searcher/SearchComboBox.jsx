@@ -4,7 +4,7 @@ import { IoIosArrowDown } from "react-icons/io";
 import {
   handleClearInput,
   focusSearchInput,
-} from "../ComponentsVisibility";
+} from "../utils/ComponentsVisibility";
 
 const SearchComboBox = ({ setSelectedChain, setVisible, setListVisible }) => {
   const [chainSelection, setChainSelection] = useState("Binance");

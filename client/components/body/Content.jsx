@@ -1,4 +1,4 @@
-import { RevealX } from "../Animation";
+import { RevealX } from "../utils/Animation";
 import "./Content.css";
 
 const Content = ({ tokenData }) => {

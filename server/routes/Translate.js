@@ -19,7 +19,7 @@ router.post("/translate", async (req, res) => {
 
     const responseData = response.data;
 
-    res.send(responseData);
+    res.send(responseData.data.translations[0].translatedText);
   } catch (error) {
     console.error("Error fetching data from translation.", error);
     res.status(500).send("Error fetching data from translation.", error);

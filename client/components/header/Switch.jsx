@@ -4,36 +4,37 @@ import { useState } from "react";
 
 import "./Switch.css";
 
-const Switch = () => {
+const Switch = ({setChecked, checked}) => {
   const [switchChecked, setSwitchChecked] = useState(true);
 
   const setDarkMode = () => {
     document.querySelector("body").setAttribute("data-theme", "dark");
     setSwitchChecked(!switchChecked);
-	console.log(switchChecked)
+    setChecked(!checked)
   };
 
   const setLightMode = () => {
     document.querySelector("body").setAttribute("data-theme", "light");
     setSwitchChecked(!switchChecked);
-	console.log(switchChecked)
+    setChecked(!checked)
   };
 
   const toggleTheme = () => {
-    if (switchChecked) {
+    if (checked) {
       setDarkMode();
     } else {
       setLightMode();
+
     }
   };
 
   return (
-    <div className={`switch${switchChecked ? '' : '-hidden'}`}>
+    <div className="switch">
       <input
         className="switch_input"
         type="checkbox"
         id="toggle"
-        checked={!switchChecked}
+        checked={!checked}
         onChange={toggleTheme}
       />
 
