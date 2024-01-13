@@ -3,7 +3,7 @@ import { IoMdSearch } from "react-icons/io";
 import axios from "axios";
 import { clearContentInputEmpty } from "../utils/ComponentsVisibility";
 
-const SearchBar = ({ selectedChain, setApiResponse, setListVisible }) => {
+const SearchBar = ({ selectedChain, setApiResponse, setListVisible, contentText }) => {
   const chainRouter = () => {
     if (selectedChain == "Binance") {
       const BINANCE_SERVER = import.meta.env.VITE_BINANCE_API_SERVER;
@@ -37,7 +37,7 @@ const SearchBar = ({ selectedChain, setApiResponse, setListVisible }) => {
         <input
           id="search"
           type="text"
-          placeholder="Search something..."
+          placeholder={contentText.placeholder}
           onChange={(e) => handleChange(e.target.value)}
         ></input>
         <IoMdSearch className="search-icon" />

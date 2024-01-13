@@ -1,10 +1,10 @@
 import Body from "../components/body/Body";
 import "./Home.css";
 
-const Home = () => {
+const Home = ({contentText}) => {
   return (
 	<div className="home">
-		<Body />
+		<Body contentText={contentText}/>
 	</div>
 	)
 	

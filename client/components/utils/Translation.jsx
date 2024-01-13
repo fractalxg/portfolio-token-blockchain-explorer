@@ -1,10 +1,18 @@
 import axios from "axios";
 
+function convertToTitleCase(str) {
+	if (!str) {
+		return ""
+	}
+  
+	return str.toLowerCase().replace(/\b\w/g, s => s.toUpperCase());
+  }
+
 const textTranslation = async (sourceLanguage, targetLanguage, text) => {
   const TRANSLATE_SERVER = import.meta.env.VITE_TRANSLATE_API_SERVER;
 
   const translationData = {
-    text: text,
+    text: convertToTitleCase(text),
     sourceLanguage: sourceLanguage,
     targetLanguage: targetLanguage,
   };
@@ -28,7 +36,7 @@ const translatedElement = async (source, target, element) => {
 					target,
 					element.innerHTML
 				);
-				element.innerHTML = translatedText;
+				element.innerHTML = translatedText
 			} catch (error) {
 				console.error("Error translating text:", error);
 			}

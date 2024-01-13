@@ -5,7 +5,7 @@ import SearchComboBox from "../searcher/SearchComboBox";
 import SearchList from "../searcher/SearchList";
 import Content from "./COntent";
 
-const Body = () => {
+const Body = ({contentText}) => {
   const [apiResponse, setApiResponse] = useState([]);
   const [tokenData, setTokenData] = useState([]);
   const [selectedChain, setSelectedChain] = useState("Binance");
@@ -15,7 +15,7 @@ const Body = () => {
   return (
     <div className="body">
       <div className="search-container">
-        <h1 id="text">Token & Blockchain Explorer</h1>
+        <h1>{contentText.search}</h1>
         <div className="search-wrapper">
   
           <SearchComboBox
@@ -28,6 +28,7 @@ const Body = () => {
               selectedChain={selectedChain}
               setApiResponse={setApiResponse}
               setListVisible={setListVisible}
+              contentText={contentText}
             />
             {listVisible && (
               <SearchList
@@ -40,7 +41,7 @@ const Body = () => {
           </div>
         </div>
       </div>
-      {visible && <Content tokenData={tokenData} />}
+      {visible && <Content tokenData={tokenData} contentText={contentText}/>}
     </div>
   );
 };

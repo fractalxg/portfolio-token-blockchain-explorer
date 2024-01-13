@@ -1,13 +1,21 @@
+import { useState } from 'react'
 import Header from '../components/header/Header'
 import Home from '../routes/Home'
 import './App.css'
 
 function App() {
+  const[contentText, setContentText] = useState({
+    search:"Token Explorer",
+    placeholder:"Type a token name...",
+    title:"Title",
+    address:"Address",
+    price:"Price"
+  })
  
   return (
     <div>
-      <Header />
-      <Home />
+      <Header contentText={contentText} setContentText={setContentText}/>
+      <Home contentText={contentText} />
     </div>
   )
 }
