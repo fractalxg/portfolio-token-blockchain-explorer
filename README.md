@@ -1,4 +1,4 @@
-Aplicação em React e Node para consultas de tokens e da blockchain (BSC e Ethereum).
+Aplicação em React e Node para consultas de tokens (BSC e Ethereum).
 
 ![token-01-white](https://github.com/fractalxg/portfolio-token-explorer/assets/147837025/bd9bd9d1-8826-4124-aac3-e5f33b9a4968)
 ![token-02-white](https://github.com/fractalxg/portfolio-token-explorer/assets/147837025/ea7f58e9-2f5f-4967-a008-f97f2c769dbe)
