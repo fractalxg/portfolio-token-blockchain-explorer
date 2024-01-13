@@ -1,5 +1,12 @@
-Aplicação em React e Node para consultas de tokens (BSC e Ethereum).
+## Descrição
+Aplicação Web em ReactJS e NodeJS (REST API + Express) para consultas de tokens (BSC e Ethereum).
 
+## Funcionalidades
+* Consulta de preço em tempo real de tokens bem como seus nomes nas respectivas blockchains (BSC ou Ethereum) e endereços.
+* Mudança de temas: claro e escuro.
+* Idiomas: inglês e português.
+
+## Screenshots
 ![token-01-white](https://github.com/fractalxg/portfolio-token-explorer/assets/147837025/bd9bd9d1-8826-4124-aac3-e5f33b9a4968)
 ![token-02-white](https://github.com/fractalxg/portfolio-token-explorer/assets/147837025/ea7f58e9-2f5f-4967-a008-f97f2c769dbe)
 ![token-03-white](https://github.com/fractalxg/portfolio-token-explorer/assets/147837025/0e47d9b8-ba1d-46a8-91ea-9484d1ed1e8b)
