@@ -30,27 +30,6 @@ const Options = ({ contentText, setContentText }) => {
   };
 
   const translatedText = async (source, target) => {
-    // const optionKeys = ["option", "theme", "language", "portuguese", "english"];
-
-    // const translations = await Promise.all(
-    //   optionKeys.map(async (key) => ({
-    //     [key]: await textTranslation(source, target, options[key]),
-    //   }))
-    // );
-
-    // const optionsText = Object.assign({}, ...translations);
-
-    // setOptions(optionsText);
-
-    // const contentTranslatedText = {
-    //   search: await textTranslation(source, target, contentText.search),
-    //   placeholder: await textTranslation(source, target, contentText.placeholder),
-    //   title: await textTranslation(source, target, contentText.title),
-    //   price: await textTranslation(source, target, contentText.price),
-    //   address: await textTranslation(source, target, contentText.address),
-    // };
-    // setContentText(contentTranslatedText);
-
     const optionsTextArray = {
       option: options.option,
       theme: options.theme,
@@ -59,42 +38,39 @@ const Options = ({ contentText, setContentText }) => {
       english: options.english,
     };
 
-    const optionString = Object.values(optionsTextArray).join(", ");
-    const optionTranslatedText = await textTranslation(
+    const contentTextArray = {
+      search: contentText.search,
+      placeholder: contentText.placeholder,
+      title: contentText.title,
+      price: contentText.price,
+      address: contentText.address,
+    };
+
+    const combinedString = Object.values(optionsTextArray)
+      .concat(Object.values(contentTextArray))
+      .join(", ");
+
+    const combinedTranslatedText = await textTranslation(
       source,
       target,
-      optionString
+      combinedString
     );
-    const translatedTextArray = optionTranslatedText.split(", ");
+
+    const translatedArray = combinedTranslatedText.split(", ");
+
     Object.keys(optionsTextArray).forEach((key, index) => {
-      optionsTextArray[key] = translatedTextArray[index];
+      optionsTextArray[key] = translatedArray[index];
     });
+
+    Object.keys(contentTextArray).forEach((key, index) => {
+      contentTextArray[key] =
+        translatedArray[index + Object.keys(optionsTextArray).length];
+    });
+
     setOptions(optionsTextArray);
-
-    // const optionsText = {
-    //   option: await textTranslation(source, target, options.option),
-    //   theme: await textTranslation(source, target, options.theme),
-    //   language: await textTranslation(source, target, options.language),
-    //   portuguese: await textTranslation(source, target, options.portuguese),
-    //   english: await textTranslation(source, target, options.english),
-    // };
-    // setOptions(optionsText);
-
-    // const translations = await Promise.all(
-    //   properties.map((prop) => textTranslation(source, target, options[prop]))
-    // );
-
-    // setOptions((prevOptions) => ({
-    //   ...prevOptions,
-    //   ...Object.fromEntries(
-    //     properties.map((prop, index) => [prop, translations[index]])
-    //   ),
-    // }));
-
-    //translatedElement(source, target, "#text");
+    setContentText(contentTextArray);
   };
 
-  // await textTranslation(source, target, options.portuguese)
   return (
     <div className="options-container">
       <p onClick={selectorVisibility} className="options-title">
