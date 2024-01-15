@@ -12,7 +12,8 @@ const textTranslation = async (sourceLanguage, targetLanguage, text) => {
   const TRANSLATE_SERVER = import.meta.env.VITE_TRANSLATE_API_SERVER;
 
   const translationData = {
-    text: convertToTitleCase(text),
+    //text: convertToTitleCase(text),
+	text: text,
     sourceLanguage: sourceLanguage,
     targetLanguage: targetLanguage,
   };

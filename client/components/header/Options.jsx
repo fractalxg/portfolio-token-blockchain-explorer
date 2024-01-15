@@ -41,24 +41,44 @@ const Options = ({ contentText, setContentText }) => {
     // const optionsText = Object.assign({}, ...translations);
 
     // setOptions(optionsText);
-    const contentTranslatedText = {
-      search: await textTranslation(source, target, contentText.search),
-      placeholder: await textTranslation(source, target, contentText.placeholder),
-      title: await textTranslation(source, target, contentText.title),
-      price: await textTranslation(source, target, contentText.price),
-      address: await textTranslation(source, target, contentText.address),
-    };
-    setContentText(contentTranslatedText);
 
-    const optionsText = {
-      option: await textTranslation(source, target, options.option),
-      theme: await textTranslation(source, target, options.theme),
-      language: await textTranslation(source, target, options.language),
-      portuguese: await textTranslation(source, target, options.portuguese),
-      english: await textTranslation(source, target, options.english),
+    // const contentTranslatedText = {
+    //   search: await textTranslation(source, target, contentText.search),
+    //   placeholder: await textTranslation(source, target, contentText.placeholder),
+    //   title: await textTranslation(source, target, contentText.title),
+    //   price: await textTranslation(source, target, contentText.price),
+    //   address: await textTranslation(source, target, contentText.address),
+    // };
+    // setContentText(contentTranslatedText);
+
+    const optionsTextArray = {
+      option: options.option,
+      theme: options.theme,
+      language: options.language,
+      portuguese: options.portuguese,
+      english: options.english,
     };
 
-    setOptions(optionsText);
+    const optionString = Object.values(optionsTextArray).join(", ");
+    const optionTranslatedText = await textTranslation(
+      source,
+      target,
+      optionString
+    );
+    const translatedTextArray = optionTranslatedText.split(", ");
+    Object.keys(optionsTextArray).forEach((key, index) => {
+      optionsTextArray[key] = translatedTextArray[index];
+    });
+    setOptions(optionsTextArray);
+
+    // const optionsText = {
+    //   option: await textTranslation(source, target, options.option),
+    //   theme: await textTranslation(source, target, options.theme),
+    //   language: await textTranslation(source, target, options.language),
+    //   portuguese: await textTranslation(source, target, options.portuguese),
+    //   english: await textTranslation(source, target, options.english),
+    // };
+    // setOptions(optionsText);
 
     // const translations = await Promise.all(
     //   properties.map((prop) => textTranslation(source, target, options[prop]))
