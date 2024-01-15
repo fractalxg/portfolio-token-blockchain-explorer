@@ -5,7 +5,7 @@ import './App.css'
 
 function App() {
   const[contentText, setContentText] = useState({
-    search:"Token Explorer",
+    search:"Token explorer",
     placeholder:"Type a token name...",
     title:"Title",
     address:"Address",

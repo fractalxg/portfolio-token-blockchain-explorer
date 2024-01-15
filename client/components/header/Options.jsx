@@ -49,15 +49,15 @@ const Options = ({ contentText, setContentText }) => {
     const combinedString = Object.values(optionsTextArray)
       .concat(Object.values(contentTextArray))
       .join(", ");
-
+    console.log(combinedString)
     const combinedTranslatedText = await textTranslation(
       source,
       target,
       combinedString
     );
-
+    console.log(combinedTranslatedText)
     const translatedArray = combinedTranslatedText.split(", ");
-
+    console.log(translatedArray)
     Object.keys(optionsTextArray).forEach((key, index) => {
       optionsTextArray[key] = translatedArray[index];
     });
