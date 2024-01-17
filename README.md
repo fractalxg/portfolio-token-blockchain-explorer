@@ -9,8 +9,10 @@ Aplicação Web em ReactJS e NodeJS (REST API + Express) para consultas de token
 ## Screenshots
 * Web
 
-![Alt text](<Token Explorer - Web-1.png>)
+![Token Explorer - Web](https://github.com/fractalxg/portfolio-token-explorer/assets/147837025/3d1123c1-47fe-419d-88dd-0a254c1d3903)
+
 
 * Mobile
 
-![Alt text](<Token Explorer - Mobile-1.png>)
+![Token Explorer - Mobile](https://github.com/fractalxg/portfolio-token-explorer/assets/147837025/8eecdb1f-332d-4933-8b86-7210fd43888e)
+
