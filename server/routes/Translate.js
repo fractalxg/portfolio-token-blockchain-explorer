@@ -1,7 +1,6 @@
 const express = require("express");
 const axios = require("axios");
 const router = express.Router();
-const { gct_url, gct_api_key } = require("../config");
 
 router.use(express.json());
 
@@ -9,13 +8,13 @@ router.post("/translate", async (req, res) => {
   try {
     const data = req.body;
 		const params = {
-      key: gct_api_key,
+      key: process.env.GCT_API_KEY,
       q: data.text,
       source: data.sourceLanguage,
       target: data.targetLanguage,
       format: "text",
     };
-    const response = await axios.post(gct_url, null, { params });
+    const response = await axios.post(process.env.GCT_URL, null, { params });
 
     const responseData = response.data;
 

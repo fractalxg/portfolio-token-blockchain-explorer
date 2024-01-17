@@ -1,13 +1,12 @@
 const express = require("express");
 const axios = require("axios");
 const router = express.Router();
-const { etherscan_url, etherscan_url_image } = require("../config");
 
 router.get("/ethereum", async (req, res) => {
   const search = req.query.term;
 
   try {
-    const response = await axios.get(etherscan_url, {
+    const response = await axios.get(process.env.ETHERSCAN_URL, {
       params: {
         term: search,
         filterby: 0,
@@ -38,7 +37,7 @@ router.get("/ethereum", async (req, res) => {
             title: data.title,
             rate: data.rate,
             address: data.address,
-            image: `${etherscan_url_image}${data.img}`
+            image: `${process.env.ETHERSCAN_URL_IMAGE}${data.img}`
           };
         })
     );

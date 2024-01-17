@@ -1,13 +1,12 @@
 const express = require("express");
 const axios = require("axios");
 const router = express.Router();
-const { bscscan_url, bscscan_url_image } = require("../config");
 
 router.get("/binance", async (req, res) => {
   const search = req.query.term;
 
   try {
-    const response = await axios.get(bscscan_url, {
+    const response = await axios.get(process.env.BSCSCAN_URL, {
       params: {
         term: search,
         filterby: 0,
@@ -38,7 +37,7 @@ router.get("/binance", async (req, res) => {
             title: data.title,
             rate: data.rate,
             address: data.address,
-            image: `${bscscan_url_image}${data.img}`
+            image: `${process.env.BSCSCAN_URL_IMAGE}${data.img}`
           };
         })
     );

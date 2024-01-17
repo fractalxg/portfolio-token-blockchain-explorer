@@ -1,11 +1,10 @@
 const express = require("express");
 const axios = require("axios");
 const router = express.Router();
-const { price_url } = require("../config");
 
 router.get("/price", async (req, res) => {
   try {
-    const response = await axios.get(price_url);
+    const response = await axios.get(process.env.GCT_URL);
 
     const responseData = response.data;
 

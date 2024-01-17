@@ -1,11 +1,10 @@
 const express = require("express");
 const cors = require("cors");
 const server = express();
-const { port, local_host } = require("./config");
 
 server.use(
   cors({
-    origin: {local_host},
+    origin: process.env.LOCAL_HOST,
     methods: ["GET", "POST"],
   })
 );
@@ -22,6 +21,6 @@ server.use("/", priceRoute);
 const translate = require("./routes/Translate");
 server.use("/", translate);
 
-server.listen(port, () => {
-  console.log(`Server is running on port: ${port}`);
+server.listen(process.env.PORT, () => {
+  console.log(`Server is running on port: ${process.env.PORT}`);
 });
