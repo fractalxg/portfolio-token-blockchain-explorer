@@ -2,11 +2,12 @@
   display: grid;
   width: 360px;
   max-height: 500px;
-  background-color: #fff;
+  background-color: var(--background-color);
   overflow-y: scroll;
   z-index: 1;
   margin-left: 108px;
   border-left: solid 1px #ddd;
+  color: var(--font-color);
 
 
 }
@@ -47,6 +48,6 @@
 
 @media screen and (max-width: 500px) {
 .search-list-container{
-  margin-left: 26px;
+  margin-left: 0px;
 }
 }

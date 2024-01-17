@@ -26,9 +26,11 @@ const SearchBar = ({ selectedChain, setApiResponse, setListVisible, contentText 
   };
 
   const handleChange = (value) => {
+    
     getChainRouterResponse(value);
     clearContentInputEmpty();
     setListVisible(true);
+    
   };
 
   return (
